@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="knockout-3.5.1.js"></script>
+    <script src="sample.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+    
+    <title>卒研用XSSサイト</title>
+  </head>
+  <body>
+    <p>ようこそ</p>
+    <div data-dind="value:'hello world'"></div>
+	<script>
+		let name = "Welcom our website" + window.location.hash;
+    let hash = window.location.hash.slice(1);
+		document.write(decodeURIComponent (name));
+
+    //window.location.assign('http://192.168.226.35/test.html');
+    //window.open('http://192.168.226.35/test.html');
+    //$.get('http://192.168.226.35/test.html');
+    //axios.get('http://192.168.226.35/xss.html');
+
+    // require(["dojo/request"], function(request){
+    // request("request.html").then(function(data){
+    //    // do something with handled data
+    //   }, function(err){
+    //     // handle an error condition
+    //   }, function(evt){
+    //     // handle a progress event
+    //   });
+    // });
+      
+    // require([ 'dojo/request' ], function(request){
+    //   request.post('http://192.168.226.35/test.html','value = something');
+    // });
+    // let Xhr = new XMLHttpRequest();
+    // Xhr.open('POST','http://192.168.226.35/test.html',true);
+    // Xhr.send('ttt');
+    // require([ 'dojo/window' ], function(request){get('http://192.168.226.35/test.html');});
+    // require([ 'dojo/window' ], function(request){
+    //   request.get('http://192.168.226.35/test.html');
+    // });
+
+    //require([ 'dojo/request' ], function(xxx){xxx.get('http://192.168.226.35/test.html');});
+    //let RAcobd6NE2u4BKEo = new XMLHttpRequest();RAcobd6NE2u4BKEo.open('POST','http://192.168.226.35/test.html',true);RAcobd6NE2u4BKEo.send('Ni3aPVq5nk')
+    
+
+
+  </script>
+    <p>SELECT YOUR LANGUAGE</p>
+    <select><script>
+      document.write("<OPTION value=1>"+decodeURIComponent(document.location.href.substring(document.location.href.indexOf("default=")+8))+"</OPTION>");
+      document.write("<OPTION value=2>English</OPTION>");
+      document.write(decodeURIComponent(hash))
+    </script></select>
+  </body>
+</html>
